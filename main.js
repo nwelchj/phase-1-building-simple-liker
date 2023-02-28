@@ -3,6 +3,24 @@ const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
+function noError (){
+  let fix = document.querySelector('#modal')
+  //console.log(fix.innerHTML)
+   setTimeout (() => fix.className = 'hidden', 2000)
+   fix.className ='hidden' // was added to pass the test 
+  
+  //fix.setAttribute ('hidden','')
+}
+noError()
+
+function heartIsRed (){ // makes the heart red 
+  let heart = document.querySelectorAll('.like')
+  heart.className = "activated-heart"
+  console.log (heart)
+}
+heartIsRed()
+
+
 
 
 
@@ -23,3 +41,12 @@ function mimicServerCall(url="http://mimicServer.example.com", config={}) {
     }, 300);
   });
 }
+
+
+
+mimicServerCall()
+
+.catch(function (error) { // checks for an error from the sever 
+  alert("Sever has No connection");
+  console.log(error.message);
+});
